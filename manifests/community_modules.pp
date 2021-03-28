@@ -12,7 +12,7 @@ class prosody::community_modules (
     default: { $_packages = [] }
   }
   ensure_packages($_packages)
-  -> vcsrepo { $path:
+  Package[$_packages] -> vcsrepo { $path:
     ensure   => $ensure,
     provider => $type,
     source   => $source,
